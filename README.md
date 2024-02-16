@@ -8,5 +8,5 @@ I create page using html and css. There is some information about me, images wit
    ![image](https://github.com/frankachu/Elizaveta_Polukhina_1lab/assets/108089618/efa52c27-862e-42f0-8be9-b248eafb3a15)
 
 
-Also you can look at this site that wsa posted via Git Pages: https://frankachu.github.io/
+Also you can look at this site that was posted via Git Pages: https://frankachu.github.io/
 Unfornatelly, this version doesn't show the time access.
