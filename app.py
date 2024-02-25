@@ -1,7 +1,17 @@
 from datetime import datetime
 from flask import Flask, render_template, url_for, redirect
+from pymongo import MongoClient
 
+client = MongoClient('localhost', 27017)
 app = Flask(__name__)
+db = client.wad_users
+
+def create(username, password):
+    db.user.insert_one({
+            "username": username,
+            "password": password
+        })
+    print("Добавлен")
 
 @app.route('/profile')
 def profile():
@@ -16,4 +26,7 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    #app.run(debug=True)
+
+    
+     
