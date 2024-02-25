@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href='{{ url_for("static", filename="css/style.css")}}'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile</title>
+</head>
+
+<body>
+    <main class="page">
+        <a class="btn" href="/logout">Log out</a>
+        <div class="info-container">
+            <p>Welcome back, {{ username }}</p>
+        </div>
+
+
+</body>
+</html>
+
+

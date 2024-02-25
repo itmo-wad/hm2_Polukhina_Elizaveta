@@ -2,36 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Styleawesome -->
   <link rel="stylesheet" href='{{ url_for("static", filename="css/style.css")}}'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Profile</title>
+  <title>Log in</title>
 </head>
 
 <body>
     <main class="page">
-        <h1>Profile</h1>
-        <div class="info-container">
-            <div><img src="{{ url_for('static', filename='images/Raichu01.jpg')}}" class="fit-picture"></div>
-            <div class="info"> 
-                <h1>{{ name }}</h1>
-                <h2>About me</h2>
-                <p>I am 23 years old.</p>
-                <p>Now I am in the first year of a master's degree in Information Security at ITMO. As part of this program, I master the specifics of this field, exclusively in English. My scientific work is related to the study of authentication methods and attacks on authentication systems. I also plan to grow in the direction of artificial intelligence.</p>
-                <p>My first education related to IT, I mastered programming skills, advanced software and information systems development, software life cycle, programming algorithms, databases and networks.</p>
-                <img src="{{ url_for('static', filename='images/4.svg')}}">
-            </div>
-            <div><img src="{{ url_for('static', filename='images/wide.svg')}}"></div>
-        </div>
         
-    </main>
+        <div class="info-container">
+            <h1>Log in</h1>
 
-    <div class="footer-info">
-        <h4>The time of your request to this page: {{ time }}</h4>
-        <h3>Have a nice day!🌸</h3>
-    </div>
-    
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}   
+            
+            <form method="POST" action="/">
+                <div class="form-group">
+                    <input type="text" id="username"  name="username" placeholder="Username" required><br>
+                </div>
+
+                <div class="form-group">
+                    <input type="password" id="password" name="password" placeholder="Password" required><br><br>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+
 
 </body>
 </html>
+       
 
