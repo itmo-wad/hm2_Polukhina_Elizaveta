@@ -10,8 +10,31 @@
 <body>
     <main class="page">
         <a class="btn" href="/logout">Log out</a>
+        
         <div class="info-container">
-            <p>Welcome back, {{ username }}</p>
+            <p>Welcome back, {{ username }}</p> 
+            {% if photo == "default" %}
+              <img src="static/images/Raichu01.jpg">
+            {% else %}
+              <img src="{{ photo }}">
+            {% endif %}
+            <form method="POST" enctype="multipart/form-data" action="/edit_photo">
+              <input type="file" name="new_image" accept="image/*" required>
+              <input type="submit" class="btn" value="Upload">
+          </form>
+            <h4>City: {{ city }}</h4>
+            <h4>Hobby: {{ hobby }}</h4>
+
+            <form action="/change_pass" method="POST">
+              <input type="password" id="old_password" placeholder="Old Password" name="old_password" required>
+              <input type="password" id="new_password" placeholder="New Password" name="new_password" required>
+              <button class="btn" type="submit">Change password</button>
+            </form>
+            <form method="POST" action="/edit">
+              <input type="text" placeholder="City" id="city" name="city">
+              <input type="text" placeholder="Hobby" id="hobby" name="hobby">
+              <button class="btn" type="submit">Edit information</button>
+            </form>
         </div>
 
 

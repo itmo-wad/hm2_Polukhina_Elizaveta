@@ -4,22 +4,20 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href='{{ url_for("static", filename="css/style.css")}}'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Log in</title>
+  <title>Registration</title>
 </head>
 
 <body>
     <main class="page">
         
         <div class="info-container">
-            
-            <h1>Log in</h1>
+            <h1>Registration</h1>
 
             {% if error %}
                 <p style="color: red;">{{ error }}</p>
-            {% endif %}
+            {% endif %}   
             
-            
-            <form method="POST" action="/">
+            <form method="POST" action="/registration">
                 <div class="form-group">
                     <input type="text" id="username"  name="username" placeholder="Username" required><br>
                 </div>
@@ -27,8 +25,8 @@
                 <div class="form-group">
                     <input type="password" id="password" name="password" placeholder="Password" required><br><br>
                 </div>
-                <button type="submit" class="btn">Login</button>
-                <a class="btn" href="/registration">Sign in</a>
+                <button type="submit" class="btn">Create account</button>
+                <a class="btn" href="index.html">Log in</a>
             </form>
         </div>
 
