@@ -124,14 +124,12 @@ def edit_photo():
 
     if photo:
         username = session['username']
-        # Сохранение фото в папке uploads на сервере
         filename = secure_filename(photo.filename)
         print(photo)
         print(filename)
         
         photo.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         print(username)
-        # Обновление документа пользователя с путем к фотографии
         db.user.update_one({'username': username}, {'$set': {'photo': filename}})
 
         return redirect(url_for("profile"))
